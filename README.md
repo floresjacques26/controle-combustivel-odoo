@@ -1,8 +1,9 @@
 # Controle de Combustível (Odoo 19) Módulo Odoo para **controle de abastecimentos**, **estoque de tanques** e **entrada de compras de combustível**, com regras automáticas de movimentação e **relatório PDF**.
 
 ---
-## ✨ Funcionalidades ### 
-⛽ Abastecimentos - Registro de abastecimentos por **equipamento (Fleet)**. - Campos: data/hora, horímetro/odômetro, motorista, litros, valor por litro. - **Total calculado automaticamente** (litros × valor por litro). - **Baixa automática** do estoque do tanque ao salvar um abastecimento. - Ajuste automático do estoque ao **editar** ou **excluir** abastecimentos.
+## ✨ Funcionalidades
+
+### ⛽ Abastecimentos - Registro de abastecimentos por **equipamento (Fleet)**. - Campos: data/hora, horímetro/odômetro, motorista, litros, valor por litro. - **Total calculado automaticamente** (litros × valor por litro). - **Baixa automática** do estoque do tanque ao salvar um abastecimento. - Ajuste automático do estoque ao **editar** ou **excluir** abastecimentos.
 
 ### 🛢️ Tanques - Cadastro de tanques com: - Nome - Capacidade (litros) - Estoque atual (litros) - Visualização rápida do estoque. 
 
