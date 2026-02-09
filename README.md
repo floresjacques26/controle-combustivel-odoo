@@ -2,7 +2,7 @@
 
 Módulo Odoo desenvolvido para controle de abastecimentos, estoque de tanques e entrada de compras de combustível, com regras automáticas de movimentação e relatório PDF.
 
-Projeto focado em boas práticas de ORM, regras de negócio no backend e estrutura modular escalável.
+Projeto focado em boas práticas de ORM, regras de negócio no backend e estrutura modular escalável, seguindo padrões utilizados em ambientes corporativos.
 
 ✨ Funcionalidades
 ⛽ Abastecimentos
@@ -37,7 +37,7 @@ Capacidade (litros)
 
 Estoque atual (litros)
 
-Visualização rápida do estoque disponível
+Visualização rápida do nível de estoque
 
 🧾 Compras de Combustível (Entrada no Estoque)
 
@@ -59,13 +59,13 @@ Rascunho → Confirmado
 
 Ao confirmar a compra:
 
-Soma automaticamente os litros ao estoque do tanque
+Os litros são somados automaticamente ao estoque do tanque
 
 🖨️ Relatório PDF
 
 Botão Imprimir no abastecimento
 
-Geração de PDF via QWeb com:
+Geração de PDF via QWeb, contendo:
 
 Data/Hora
 
@@ -98,9 +98,9 @@ estoque_atual(tanque) = estoque_atual(tanque) + litros_comprados
 
 Regra 3 — Segurança de estoque
 
-Não permite abastecimento que deixe o tanque com estoque negativo
+Não permite abastecimento que gere estoque negativo
 
-Validação feita no backend (ORM)
+Validação implementada no backend (ORM)
 
 🧪 Como Testar (Passo a Passo)
 1️⃣ Criar um Tanque
@@ -119,7 +119,7 @@ Valor por Litro: 6,00 (exemplo)
 
 Salvar
 
-✅ Estoque do tanque deve ficar 5950
+✅ O estoque do tanque deve ficar 5950
 
 3️⃣ Criar uma Compra
 
@@ -129,7 +129,7 @@ Litros Comprados: 200
 
 Status: Confirmar
 
-✅ Estoque do tanque deve somar 200 litros
+✅ O estoque do tanque deve somar 200 litros
 
 🧩 Dependências
 
@@ -143,41 +143,40 @@ Copie o módulo para o diretório de addons do Odoo
 
 Reinicie o Odoo
 
-No Odoo:
-
-Apps → Atualizar lista de Apps
+No Odoo, acesse: Apps → Atualizar lista de Apps
 
 Procure por: Controle de Combustível
 
 Instale o módulo
 
 📂 Estrutura do Módulo
+
 controle_combustivel/
 ├── models/
-│   ├── tanque.py
-│   ├── abastecimento.py
-│   └── compra.py
+│ ├── tanque.py
+│ ├── abastecimento.py
+│ └── compra.py
 │
 ├── views/
-│   ├── menus
-│   ├── formulários
-│   └── listas
+│ ├── menus
+│ ├── formulários
+│ └── listas
 │
 ├── security/
-│   ├── grupos
-│   └── permissões
+│ ├── grupos
+│ └── permissões
 │
 ├── reports/
-│   ├── template QWeb
-│   └── action de relatório PDF
+│ ├── template_qweb.xml
+│ └── action_report.xml
 │
 └── README.md
 
 🔮 Integrações Futuras (Proposta)
 
-Integração com o módulo Purchase:
+Integração com o módulo Purchase
 
-Geração de pedido de compra (PO) com produto Combustível
+Geração de Pedido de Compra (PO) com produto Combustível
 
 Atualização automática do tanque no recebimento (Receipt)
 
@@ -191,7 +190,8 @@ Multi-tanque
 
 Multi-empresa
 
-Dashboard gerencial de consumo
+Dashboard gerencial de consumo e custos
+
 
 👤 Autor
 
