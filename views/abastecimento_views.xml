@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST VIEW (Odoo 19: list) -->
+    <record id="view_abastecimento_list" model="ir.ui.view">
+        <field name="name">controle.combustivel.abastecimento.list</field>
+        <field name="model">controle.combustivel.abastecimento</field>
+        <field name="arch" type="xml">
+            <list string="Abastecimentos">
+                <field name="data_hora"/>
+                <field name="equipamento_id"/>
+                <field name="tanque_id"/>
+                <field name="motorista_id"/>
+                <field name="litros"/>
+                <field name="valor_por_litro"/>
+                <field name="total"/>
+                <field name="usuario_responsavel_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_abastecimento_form" model="ir.ui.view">
+    <field name="name">controle.combustivel.abastecimento.form</field>
+    <field name="model">controle.combustivel.abastecimento</field>
+    <field name="arch" type="xml">
+        <form string="Abastecimento">
+            <header>
+                <!-- Botão para imprimir PDF -->
+                <button
+                    name="%(controle_combustivel.action_report_abastecimento)d"
+                    string="Imprimir PDF"
+                    type="action"
+                    class="btn-primary"
+                />
+            </header>
+
+            <sheet>
+                <group>
+                    <field name="equipamento_id"/>
+                    <field name="data_hora"/>
+                    <field name="horimetro_odometro"/>
+                </group>
+
+                <group>
+                    <field name="tanque_id"/>
+                    <field name="litros"/>
+                    <field name="valor_por_litro"/>
+                    <field name="total" readonly="1"/>
+                </group>
+
+                <group>
+                    <field name="motorista_id"/>
+                    <field name="usuario_responsavel_id" readonly="1"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+    </record>
+
+
+    <!-- ACTION -->
+    <record id="action_abastecimentos" model="ir.actions.act_window">
+        <field name="name">Abastecimentos</field>
+        <field name="res_model">controle.combustivel.abastecimento</field>
+        <field name="view_mode">list,form</field>
+    </record>
+   
+
+   
+</odoo>

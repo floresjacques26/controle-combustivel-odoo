@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="report_abastecimento_pdf">
+    <!-- ESSENCIAL no Odoo 17+/19 -->
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+
+        <main>
+          <div class="page">
+            <h2 style="margin-bottom: 8px;">Relatório de Abastecimento</h2>
+
+            <t t-foreach="docs" t-as="o">
+              <div style="border: 1px solid #ddd; padding: 12px; margin-bottom: 12px; border-radius: 6px;">
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Data/Hora:</strong>
+                  <span t-field="o.data_hora"/>
+                </p>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Equipamento/Placa:</strong>
+                  <span t-field="o.equipamento_id"/>
+                </p>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Tanque:</strong>
+                  <span t-field="o.tanque_id"/>
+                </p>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Motorista:</strong>
+                  <span t-field="o.motorista_id"/>
+                </p>
+
+                <hr style="margin: 10px 0;"/>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Horímetro/Odômetro:</strong>
+                  <span t-field="o.horimetro_odometro"/>
+                </p>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Litros:</strong>
+                  <span t-field="o.litros"/>
+                </p>
+
+                <p style="margin: 0 0 6px 0;">
+                  <strong>Valor por Litro:</strong>
+                  <span t-field="o.valor_por_litro"/>
+                </p>
+
+                <p style="margin: 0;">
+                  <strong>Total:</strong>
+                  <span t-field="o.total"/>
+                </p>
+
+                <p style="margin-top: 10px; color: #666;">
+                  <strong>Usuário responsável:</strong>
+                  <span t-field="o.usuario_responsavel_id"/>
+                </p>
+              </div>
+            </t>
+
+          </div>
+        </main>
+
+      </t>
+    </t>
+  </template>
+
+</odoo>

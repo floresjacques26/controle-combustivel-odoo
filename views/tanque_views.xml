@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_tanque_list" model="ir.ui.view">
+        <field name="name">controle.combustivel.tanque.list</field>
+        <field name="model">controle.combustivel.tanque</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="estoque_atual"/>
+                <field name="capacidade"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_tanque_form" model="ir.ui.view">
+        <field name="name">controle.combustivel.tanque.form</field>
+        <field name="model">controle.combustivel.tanque</field>
+        <field name="arch" type="xml">
+            <form string="Tanque de Combustível">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="capacidade"/>
+                        <field name="estoque_atual"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_tanques" model="ir.actions.act_window">
+        <field name="name">Tanques</field>
+        <field name="res_model">controle.combustivel.tanque</field>
+        <field name="view_mode">list,form</field>
+    </record>
+   
+
+
+   
+</odoo>

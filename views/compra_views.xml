@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_compra_list" model="ir.ui.view">
+        <field name="name">controle.combustivel.compra.list</field>
+        <field name="model">controle.combustivel.compra</field>
+        <field name="arch" type="xml">
+            <list string="Compras de Combustível">
+                <field name="data"/>
+                <field name="tanque_id"/>
+                <field name="fornecedor_id"/>
+                <field name="litros"/>
+                <field name="valor_total"/>
+                <field name="state"/>
+                <field name="usuario_responsavel_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_compra_form" model="ir.ui.view">
+    <field name="name">controle.combustivel.compra.form</field>
+    <field name="model">controle.combustivel.compra</field>
+    <field name="arch" type="xml">
+        <form string="Compra de Combustível">
+            <header>
+                <field name="state" widget="statusbar"/>
+                <button name="action_confirmar"
+                        string="Confirmar"
+                        type="object"
+                        class="btn-primary"/>
+            </header>
+
+            <sheet>
+                <group col="2">
+                    <field name="data"/>
+                    <field name="tanque_id"/>
+                    <field name="fornecedor_id"/>
+                    <field name="usuario_responsavel_id" readonly="1"/>
+                </group>
+
+                <group col="2">
+                    <field name="litros"/>
+                    <field name="valor_total"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    <!-- ACTION -->
+    <record id="action_compras" model="ir.actions.act_window">
+        <field name="name">Compras</field>
+        <field name="res_model">controle.combustivel.compra</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+
+    
+</odoo>

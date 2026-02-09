@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- =========================
+         VIEWS: Graph + Pivot
+         ========================= -->
+
+    <record id="view_dashboard_abastecimento_graph" model="ir.ui.view">
+        <field name="name">controle.combustivel.abastecimento.dashboard.graph</field>
+        <field name="model">controle.combustivel.abastecimento</field>
+        <field name="arch" type="xml">
+            <graph string="Consumo (Litros) por Data" type="line">
+                <field name="data_hora" type="row" interval="day"/>
+                <field name="litros" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_dashboard_abastecimento_pivot" model="ir.ui.view">
+        <field name="name">controle.combustivel.abastecimento.dashboard.pivot</field>
+        <field name="model">controle.combustivel.abastecimento</field>
+        <field name="arch" type="xml">
+            <pivot string="Resumo de Abastecimentos">
+                <field name="tanque_id" type="row"/>
+                <field name="equipamento_id" type="row"/>
+                <field name="data_hora" type="col" interval="month"/>
+                <field name="litros" type="measure"/>
+                <field name="total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- =========================
+         ACTION: Dashboard
+         ========================= -->
+
+    <record id="action_dashboard_combustivel" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">controle.combustivel.abastecimento</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="context">{'group_by': ['tanque_id']}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Nenhum abastecimento ainda.
+            </p>
+            <p>
+                Crie abastecimentos para ver gráficos e totais por tanque.
+            </p>
+        </field>
+    </record>
+
+</odoo>

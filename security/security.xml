@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_motorista" model="res.groups">
+        <field name="name">Motorista (Controle Combustível)</field>
+    </record>
+
+    <record id="group_analista" model="res.groups">
+        <field name="name">Analista (Controle Combustível)</field>
+        <field name="implied_ids" eval="[(4, ref('controle_combustivel.group_motorista'))]"/>
+    </record>
+
+    <record id="group_admin" model="res.groups">
+        <field name="name">Administrador (Controle Combustível)</field>
+        <field name="implied_ids" eval="[
+            (4, ref('controle_combustivel.group_analista')),
+            (4, ref('base.group_system'))
+        ]"/>
+    </record>
+
+</odoo>

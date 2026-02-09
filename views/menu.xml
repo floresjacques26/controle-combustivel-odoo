@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ROOT -->
+    <menuitem id="menu_controle_combustivel_root"
+              name="Controle de Combustível"
+              sequence="10"/>
+
+    <!-- (Opcional) Submenus "padrão ERP" -->
+    <menuitem id="menu_controle_operacoes"
+              name="Operações"
+              parent="menu_controle_combustivel_root"
+              sequence="10"/>
+
+    <menuitem id="menu_controle_estoque"
+              name="Estoque"
+              parent="menu_controle_combustivel_root"
+              sequence="20"/>
+
+    <!-- Abastecimentos -->
+    <menuitem id="menu_abastecimentos"
+              name="Abastecimentos"
+              parent="menu_controle_operacoes"
+              action="action_abastecimentos"
+              sequence="10"
+              groups="controle_combustivel.group_motorista,controle_combustivel.group_analista,controle_combustivel.group_admin"/>
+
+    <!-- Compras -->
+    <menuitem id="menu_compras_combustivel"
+              name="Compras"
+              parent="menu_controle_operacoes"
+              action="action_compras"
+              sequence="20"
+              groups="controle_combustivel.group_motorista,controle_combustivel.group_analista,controle_combustivel.group_admin"/>
+
+    <!-- Tanques -->
+    <menuitem id="menu_tanques"
+              name="Tanques"
+              parent="menu_controle_estoque"
+              action="action_tanques"
+              sequence="10"
+              groups="controle_combustivel.group_analista,controle_combustivel.group_admin"/>
+              
+    <!-- Dashboard -->
+    <menuitem id="menu_dashboard_combustivel"
+              name="Dashboard"
+              parent="menu_controle_combustivel_root"
+              action="action_dashboard_combustivel"
+              sequence="1"/>
+
+
+</odoo>

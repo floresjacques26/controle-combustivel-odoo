@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="action_report_abastecimento" model="ir.actions.report">
+    <field name="name">Abastecimento (PDF)</field>
+    <field name="model">controle.combustivel.abastecimento</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">controle_combustivel.report_abastecimento_pdf</field>
+    <field name="report_file">controle_combustivel.report_abastecimento_pdf</field>
+    <field name="print_report_name">'Abastecimento - %s' % (object.equipamento_id.display_name or 'Sem Equipamento')</field>
+  </record>
+</odoo>

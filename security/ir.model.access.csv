@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_abastecimento_motorista,Abastecimento Motorista,model_controle_combustivel_abastecimento,controle_combustivel.group_motorista,1,1,1,0
+access_abastecimento_analista,Abastecimento Analista,model_controle_combustivel_abastecimento,controle_combustivel.group_analista,1,0,0,0
+access_abastecimento_admin,Abastecimento Admin,model_controle_combustivel_abastecimento,controle_combustivel.group_admin,1,1,1,1
+
+access_tanque_motorista,Tanque Motorista,model_controle_combustivel_tanque,controle_combustivel.group_motorista,1,0,0,0
+access_tanque_analista,Tanque Analista,model_controle_combustivel_tanque,controle_combustivel.group_analista,1,0,0,0
+access_tanque_admin,Tanque Admin,model_controle_combustivel_tanque,controle_combustivel.group_admin,1,1,1,1
+
+access_compra_motorista,Compra Motorista,model_controle_combustivel_compra,controle_combustivel.group_motorista,1,1,1,0
+access_compra_analista,Compra Analista,model_controle_combustivel_compra,controle_combustivel.group_analista,1,0,0,0
+access_compra_admin,Compra Admin,model_controle_combustivel_compra,controle_combustivel.group_admin,1,1,1,1
